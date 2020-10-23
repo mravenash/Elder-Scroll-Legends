@@ -9,7 +9,7 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './style'
 import PropTypes from 'prop-types';
 
-const ImageCard = (props) => {
+const CardDetails = (props) => {
     const { name, text, setName, type, classes, url } = props;
     return (
         <Card className={classes.root} variant="outlined">
@@ -38,11 +38,11 @@ const ImageCard = (props) => {
     );
 }
 
-ImageCard.propTypes = {
+CardDetails.propTypes = {
     name: PropTypes.string,
     text: PropTypes.string,
     setName: PropTypes.object,
     type: PropTypes.string,
     url: PropTypes.string
 };
-export default withStyles(styles)(ImageCard)
+export default withStyles(styles)(CardDetails)

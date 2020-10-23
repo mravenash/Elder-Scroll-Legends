@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ImageCard from './CardDetails/CardDetails'
+import CardDetails from './CardDetails/CardDetails'
 import useInfiniteScroll from "../Hooks/InfiniteScroll";
 import SearchComponent from './Search/Search';
 import Notification from './Notification/Notification';
@@ -79,7 +79,7 @@ const ElderScrollsLegends = (props) => {
             isError ? <Notification type={"error"} title={"Error"} message={"Api is currenlty down, try again later"} /> :
                 !isEmpty(imageList) && imageList.map((image) => {
                     const { id, imageUrl, name, set, text, type } = image;
-                    return <ImageCard className={classes.alignCenter} key={id} name={name}
+                    return <CardDetails className={classes.alignCenter} key={id} name={name}
                         text={text} url={imageUrl} setName={set} type={type} />
                 })
         }
