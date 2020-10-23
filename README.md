@@ -1,5 +1,3 @@
-
-
 ### `npm install`
 
 Installs all the dependecies added in package.json
@@ -25,13 +23,13 @@ Caching search items in local strorage which has no records in order avoid subse
 
 Optimizations: Not in scope->
 
-1.Use service worker, in order to intercept each request https request and store the result in local storage/Indexed, as key value pairs(or  stores of indexed db), where key is the url and value is the response. Hence for subsequent requests we can check if the url is present in the local storage and then get the data from localstaroge instead of making an actual https call. Will reduce the stress on the api.
+1. Use service worker, in order to intercept each request https request and store the result in local storage/Indexed, as key value pairs(or  stores of indexed db), where key is the url and value is the response. Hence for subsequent requests we can check if the url is present in the local storage and then get the data from localstaroge instead of making an actual https call. Will reduce the stress on the api.
 
 2. Using the above approach, we can also provide offline support. Would also be a great performance enhancement for low badwidth networks. 
 
-We are using debouncing scoll events for infintite scrolling, the other option would be to use HTML Intersection Observer(https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), where we can have an element ref, and once we reach that element we can do a fetch.
+3. We are debouncing scoll events for infintite scrolling, the other option would be to use HTML Intersection Observer(https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), where we can have an element ref, and once we reach that element we can do a fetch.
 
-3.We are using useState and useEffect hooks in order to accomplish the feature. Another apporach would we to use useReducer, which will be event based, where we will be doing operations with respect to events that are dispatched.
+4. We are using useState and useEffect hooks in order to accomplish the feature. Another apporach would we to use useReducer, which will be event based, where we will be doing operations with respect to /actions that are dispatched.
 
 ### Features available in the app.
 
