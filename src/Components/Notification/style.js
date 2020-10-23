@@ -1,6 +1,6 @@
 const style = {
     alertContainer: {
-        width: '500px'
+        maxWidth: '500px'
     }
 }
 
