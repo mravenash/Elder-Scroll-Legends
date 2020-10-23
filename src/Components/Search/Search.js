@@ -5,6 +5,7 @@ import Search from '@material-ui/icons/Search';
 import { withStyles } from '@material-ui/core/styles';
 import style from './style'
 import debounce from 'lodash/debounce';
+import PropTypes from 'prop-types';
 
 const SearchInput = (props) => {
     const { handleChange, classes } = props;
@@ -24,5 +25,9 @@ const SearchInput = (props) => {
         }}
     />)
 }
+
+SearchInput.propTypes = {
+    handleChange: PropTypes.func
+};
 
 export default withStyles(style)(SearchInput)
