@@ -42,7 +42,7 @@ const ElderScrollsLegends = (props) => {
                 setPage(prev => prev + 1);
             } else {
                 setEmptyData(true);
-                // Set emptyRecords
+                // Cache values for empty records to avoid refetch on scroll.
                 window.localStorage.setItem(searchInput.toLowerCase(), true);
             }
         }
