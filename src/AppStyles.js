@@ -1,7 +1,7 @@
 const AppStyle = {
     container: {
         justifyContent: 'center',
-        display: 'grid'
+        maxWidth: '550px'
     }
 }
 
