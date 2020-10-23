@@ -29,6 +29,8 @@ const ElderScrollsLegends = (props) => {
     async function fetchData() {
         const fetchDataUrl = `${url}?name=${searchInput || ""}&page=${page}&pageSize=${PAGE_SIZE}`
         const noRecords = window.localStorage.getItem(searchInput.toLowerCase());
+
+        //Short circuit for records with empty data sets.
         if (noRecords) {
             setLoading(false);
             setEmptyData(true);
