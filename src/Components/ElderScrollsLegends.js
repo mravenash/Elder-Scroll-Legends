@@ -25,10 +25,14 @@ const ElderScrollsLegends = (props) => {
     }, [])
 
 
+    const computeKey = (searchInput, page) => searchInput.toLowerCase() + '=>' + page;
+
     //Fetch data on on scroll
     async function fetchData() {
         const fetchDataUrl = `${url}?name=${searchInput || ""}&page=${page}&pageSize=${PAGE_SIZE}`
-        const noRecords = window.localStorage.getItem(searchInput.toLowerCase());
+
+        const key = computeKey(searchInput, page);
+        const noRecords = window.localStorage.getItem(key);
 
         //Short circuit for records with empty data sets.
         if (noRecords) {
@@ -44,8 +48,9 @@ const ElderScrollsLegends = (props) => {
                 setPage(prev => prev + 1);
             } else {
                 setEmptyData(true);
+                const key = computeKey(searchInput, page)
                 // Cache values for empty records to avoid refetch on scroll.
-                window.localStorage.setItem(searchInput.toLowerCase(), true);
+                window.localStorage.setItem(key, true);
             }
         }
         catch (err) {
